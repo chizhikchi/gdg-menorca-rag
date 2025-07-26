@@ -31,4 +31,4 @@ fastapi==0.116.1
 uvicorn[standard]==0.24.0
 
 # Google Cloud dependencies
-google-cloud-aiplatform==1.38.1
+google-cloud-aiplatform==1.105.0
