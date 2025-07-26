@@ -154,7 +154,6 @@ generated_docs/
 !README.txt
 
 # RAG metadata and backups
-corpus_metadata.json
 backups/
 *.backup
 
@@ -162,12 +161,6 @@ backups/
 *.log
 logs/
 rag_corpus.log
-
-# Data files (exclude actual hotel data)
-data/hotel_chatbot_documents.json
-data/*.json
-data/*.csv
-data/*.xlsx
 
 # Temporary files
 temp/
@@ -363,6 +356,7 @@ profile_results/
 *.db
 *.sqlite
 *.sqlite3
+corpus_metadata.json
 
 # Backup files
 *.bak
