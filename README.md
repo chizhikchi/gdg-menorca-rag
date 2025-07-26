@@ -1,12 +1,11 @@
 # 🏨 GDG Menorca Resort - Advanced RAG Management System
 
-> **A sophisticated, production-ready RAG (Retrieval-Augmented Generation) system for hotel management with beautiful CLI interface, comprehensive monitoring, and enterprise-grade features.**
+> **A RAG (Retrieval-Augmented Generation) system for hotel management with beautiful CLI interface, comprehensive monitoring, and enterprise-grade features.**
 
 > **Note:** Docker support is temporarily removed for this GitHub upload. Docker files and deployment instructions will be available in a future release.
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Powered by Vertex AI](https://img.shields.io/badge/Powered%20by-Vertex%20AI-4285f4.svg)](https://cloud.google.com/vertex-ai)
 
 ## ✨ Features at a Glance
@@ -245,45 +244,6 @@ Structured logging with multiple levels:
 
 ---
 
-## 🚢 Deployment
-
-### Docker Deployment (Coming Soon)
-Docker support is currently being prepared and will be available in a future release.
-
-```bash
-# Docker commands will be available soon:
-# make docker-build
-# make docker-run
-# docker-compose up -d
-```
-
-### Cloud Run Deployment
-```bash
-# Deploy to Google Cloud Run
-gcloud run deploy gdg-menorca-rag \
-  --source . \
-  --platform managed \
-  --region us-central1 \
-  --allow-unauthenticated
-```
-
-### Environment Variables for Production
-```env
-# Required
-GEMINI_KEY=your_production_key
-GOOGLE_CLOUD_PROJECT=your-prod-project
-GOOGLE_CLOUD_LOCATION=us-central1
-CORPUS_DISPLAY_NAME=prod-hotel-docs
-
-# Optional
-GRADIO_SERVER_PORT=8080
-GRADIO_SERVER_NAME=0.0.0.0
-LOG_LEVEL=INFO
-MAX_CONCURRENT_GENERATIONS=5
-```
-
----
-
 ## 🔧 Configuration
 
 ### `rag_config.json`
@@ -322,29 +282,6 @@ MAX_CONCURRENT_GENERATIONS=5
 ]
 ```
 
----
-
-## 🎯 Best Practices
-
-### Development Workflow
-1. **Always test locally first**: Use `--dry-run` flags
-2. **Monitor logs**: Check `rag_corpus.log` regularly
-3. **Backup before major changes**: Use built-in backup system
-4. **Validate status**: Run `status` command before operations
-
-### Production Guidelines
-1. **Resource Limits**: Configure appropriate timeouts and batch sizes
-2. **Error Handling**: Monitor error rates and adjust retry settings
-3. **Backup Strategy**: Enable automatic backups
-4. **Health Monitoring**: Set up alerts on health endpoints
-
-### Security Considerations
-1. **API Keys**: Never commit keys to version control
-2. **Access Control**: Use IAM roles for Vertex AI access
-3. **Network Security**: Configure appropriate firewall rules
-4. **Audit Logging**: Enable Cloud Audit Logs
-
----
 
 ## 🎨 Customization
 
@@ -361,109 +298,6 @@ MAX_CONCURRENT_GENERATIONS=5
 }
 ```
 
-### Extending the CLI
-```python
-@cli.command()
-@click.option('--custom-param', help='Custom parameter')
-def custom_command(custom_param):
-    """Custom command description"""
-    manager = HotelRAGManager()
-    # Your custom logic here
-```
-
----
-
-## 📈 Performance Optimization
-
-### Large Document Sets
-- **Batch Processing**: Adjust `batch_size` in config
-- **Concurrent Generation**: Set `MAX_CONCURRENT_GENERATIONS`
-- **Memory Management**: Monitor memory usage during generation
-
-### API Rate Limits
-- **Retry Logic**: Built-in exponential backoff
-- **Request Throttling**: Configurable delays between requests
-- **Error Recovery**: Automatic retry on transient failures
-
----
-
-## 🛟 Troubleshooting
-
-### Common Issues
-
-#### "Corpus not found" Error
-```bash
-# Check if corpus exists
-python rag_manager.py status
-
-# Create new corpus
-python rag_manager.py generate --interactive
-```
-
-#### Generation Failures
-```bash
-# Check logs for details
-python rag_manager.py logs
-
-# Retry with debug logging
-LOG_LEVEL=DEBUG python rag_manager.py generate
-```
-
-#### Upload Errors
-```bash
-# Verify permissions
-gcloud auth list
-
-# Check quota limits
-gcloud quota list --project=your-project
-```
-
-### Debug Mode
-```bash
-# Enable verbose logging
-export LOG_LEVEL=DEBUG
-python rag_manager.py generate --interactive
-```
-
----
-
-## 🤝 Contributing
-
-### Development Setup
-```bash
-# Install development dependencies
-make dev-install
-
-# Format code
-make format
-
-# Run linting
-make lint
-
-# Run tests
-make test
-```
-
-### Code Style
-- **Black** formatting
-- **Flake8** linting
-- **Type hints** for all functions
-- **Comprehensive docstrings**
-
-### Pull Request Process
-1. Fork the repository
-2. Create feature branch
-3. Add tests for new functionality
-4. Ensure all tests pass
-5. Submit pull request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 🙏 Acknowledgments
 
