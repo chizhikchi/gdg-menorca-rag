@@ -1,6 +1,6 @@
 # 🏨 GDG Menorca Resort - Advanced RAG Management System
 
-> **A RAG (Retrieval-Augmented Generation) system for hotel management with beautiful CLI interface, comprehensive monitoring, and enterprise-grade features.**
+> **A RAG (Retrieval-Augmented Generation) system for customer inquiries management about hotel information.**
 
 > **Note:** Docker support is temporarily removed for this GitHub upload. Docker files and deployment instructions will be available in a future release.
 
