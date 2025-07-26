@@ -245,31 +245,6 @@ Structured logging with multiple levels:
 
 ---
 
-## 🧪 Testing
-
-### Running Tests
-```bash
-# Run all tests
-make test
-
-# Run with coverage
-pytest tests/ --cov=rag_manager --cov-report=html
-
-# Run only integration tests
-pytest tests/ -v -m integration
-
-# Run performance tests
-pytest tests/ -v -m performance
-```
-
-### Test Categories
-- **Unit Tests**: Individual component testing
-- **Integration Tests**: End-to-end workflows
-- **Performance Tests**: Large dataset handling
-- **Error Tests**: Failure scenario handling
-
----
-
 ## 🚢 Deployment
 
 ### Docker Deployment (Coming Soon)

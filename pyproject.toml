@@ -45,8 +45,6 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "pytest==8.0.0",
-    "pytest-asyncio==0.23.0",
     "black==25.1.0",
     "flake8==7.0.0",
     "mypy==1.7.0",
@@ -87,14 +85,15 @@ exclude = [
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra -q --strict-markers"
-testpaths = [
-    "tests",
-]
-python_files = [
-    "test_*.py",
-    "*_test.py",
-]
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+
+
+
 
 [tool.mypy]
 python_version = "3.9"

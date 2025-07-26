@@ -1,4 +1,4 @@
-.PHONY: help install dev-install test format lint clean run-cli run-app
+.PHONY: help install dev-install format lint clean run-cli run-app
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -11,9 +11,6 @@ install: ## Install production dependencies
 
 dev-install: ## Install development dependencies
 	pip install -e ".[dev]"
-
-test: ## Run tests
-	pytest tests/ -v
 
 format: ## Format code with black
 	black .
