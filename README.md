@@ -8,10 +8,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Powered by Vertex AI](https://img.shields.io/badge/Powered%20by-Vertex%20AI-4285f4.svg)](https://cloud.google.com/vertex-ai)
 
-## ✨ Features at a Glance
-
-🎨 **Beautiful CLI Interface** • 📊 **Progress Tracking** • 🔍 **Health Monitoring** • 🛡️ **Error Recovery** • 📝 **Comprehensive Logging** • 🚀 **Production Ready**
-
 ---
 
 ## 🚀 Quick Start
